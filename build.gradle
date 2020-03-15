@@ -1,39 +1,35 @@
 buildscript {
     ext {
-        springBootVersion = '2.1.7.RELEASE'
+        springBootVersion = '2.1.9.RELEASE'
     }
     repositories {
         mavenCentral()
         jcenter()
     }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
 }
 
-plugins {
-    id 'java'
-    id 'org.springframework.boot' version '2.2.4.RELEASE'
-    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
-}
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
 
-group 'com.june.practice'
-version '1.0-SNAPSHOT'
-
+group 'com.june.springboot'
+version '1.0.4-SNAPSHOT-'+new Date().format("yyyyMMddHHmmss")
 sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
-    implementation('org.springframework.boot:spring-boot-starter-web')
-
-    /*
-    spring-boot-starter-test 는 아래 exclude 와 engine 까지 같이 작성
-    */
-    //testComplie('org.springframework.boot:spring-boot-starter-test')
-    testImplementation('org.springframework.boot:spring-boot-starter-test') {
-        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-    }
-
-    //Junit TEST
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.projectlombok:lombok')
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('com.h2database:h2')
+    
+    testCompile('org.springframework.boot:spring-boot-starter-test')
 }
