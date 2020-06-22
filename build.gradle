@@ -29,7 +29,8 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.projectlombok:lombok')
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
-    compile('com.h2database:h2')
+/*    compile('com.h2database:h2')*/
+    implementation group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.6.0'
     compile('org.springframework.boot:spring-boot-starter-mustache')
 
     testCompile('org.springframework.boot:spring-boot-starter-test')
