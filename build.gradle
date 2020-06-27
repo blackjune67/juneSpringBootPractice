@@ -32,6 +32,6 @@ dependencies {
 /*    compile('com.h2database:h2')*/
     implementation group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.6.0'
     compile('org.springframework.boot:spring-boot-starter-mustache')
-
+    compile('org.springframework.boot:spring-boot-starter-oauth2-client') //스프링시큐리티 설정
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }

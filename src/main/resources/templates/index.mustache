@@ -3,9 +3,20 @@
 
 <h1>스프링부트 JPA 게시판 작성</h1>
 <div class="col-md-12">
+    <!-- 로그인 기능 영역 -->
     <div class="row">
         <div class="col-md-6">
-            <a href="/posts/save" role="button" class="btn btn-primary">글 등록</a>
+            <a href="/posts/save" role="button" class="btn btn-primary">글등록</a>
+            {{#userName}}
+                Logged in as: <span id="user">{{userName}}</span>
+                    <a href="/logout" class="btn btn-info active" role="button">로그아웃</a>
+            {{/userName}}
+
+            {{^userName}} <!-- userName이 없으면 구글 로그인 노출 -->
+                    <a href="/oauth2/authorization/google" class="btn btn-success active" role="button">
+                        구글 로그인
+                    </a>
+            {{/userName}}
         </div>
     </div>
 

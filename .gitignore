@@ -5,8 +5,8 @@ HELP.md
 settings.gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
-application-oauth.properties
-application.properties
+#application-oauth.properties
+#application.properties
 
 ### STS ###
 .apt_generated
