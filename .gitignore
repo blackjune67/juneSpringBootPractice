@@ -1,5 +1,8 @@
 HELP.md
 .gradle
+.gradlew
+.gradle.bat
+settings.gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
 application-oauth.properties
