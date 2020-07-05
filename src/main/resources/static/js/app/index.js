@@ -20,6 +20,8 @@ var main = {
             content: $('#content').val()
         };
 
+        console.log('>>>>>>>> 세이브 DATA : ', data);
+
         $.ajax({
             type: 'POST',
             url: '/api/v1/posts',
@@ -30,6 +32,7 @@ var main = {
             alert('글이 등록되었습니다.');
             window.location.href = '/';
         }).fail(function (error) {
+            console.log('에러 : ', JSON.stringify(error));
             alert(JSON.stringify(error));
         });
     },

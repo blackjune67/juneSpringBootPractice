@@ -13,6 +13,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     //private final CustomUserTypesOAuth2UserService customUserTypesOAuth2UserService;
     private final CustomOAuth2UserService customOAuth2UserService;
 
+    @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
                     .headers().frameOptions().disable() //2 h2-console 화면을 사용하기 위한 옵션들을 비활성화
@@ -26,7 +27,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .userInfoEndpoint() //8 로그인 성공이후 사용자 정보 가져올 때
                     .userService(customOAuth2UserService); //9 소셜 로그인 성공시 후속조치 진행
     }
-
-
-
 }
